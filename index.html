@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07152e">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-theme="@@THEME@@">
+  <main class="page">
+    <section class="calculator" aria-label="Calculator">
+      <form method="post" action="/" class="calculator-form">
+        <input type="hidden" name="current" value="@@CURRENT@@">
+        <input type="hidden" name="stored" value="@@STORED@@">
+        <input type="hidden" name="pendingOperator" value="@@OPERATOR@@">
+        <input type="hidden" name="startNew" value="@@START_NEW@@">
+        <input type="hidden" name="justCalculated" value="@@JUST_CALCULATED@@">
+        <input type="hidden" name="expression" value="@@EXPRESSION@@">
+        <input type="hidden" name="currentTheme" value="@@THEME@@">
+
+        <header class="calculator__header">
+          <h1>Calculator</h1>
+          <div class="theme-switch" aria-label="Color theme">
+            <button class="theme-switch__button @@DARK_ACTIVE@@" type="submit" name="theme" value="dark" aria-label="Dark theme" aria-pressed="@@DARK_PRESSED@@">☀</button>
+            <button class="theme-switch__button @@LIGHT_ACTIVE@@" type="submit" name="theme" value="light" aria-label="Light theme" aria-pressed="@@LIGHT_PRESSED@@">☾</button>
+          </div>
+        </header>
+
+        <div class="display" aria-live="polite" aria-atomic="true">
+          <div class="display__expression">@@EXPRESSION@@</div>
+          <output class="display__value">@@CURRENT@@</output>
+        </div>
+
+        <div class="keypad" aria-label="Calculator keys">
+          <button class="key key--utility" type="submit" name="action" value="clear" aria-label="Clear">C</button>
+          <button class="key key--utility" type="submit" name="action" value="sign" aria-label="Change sign">+/-</button>
+          <button class="key key--utility" type="submit" name="action" value="percent" aria-label="Percent">%</button>
+          <button class="key key--operator" type="submit" name="operation" value="/" aria-label="Divide">÷</button>
+
+          <button class="key" type="submit" name="digit" value="7">7</button>
+          <button class="key" type="submit" name="digit" value="8">8</button>
+          <button class="key" type="submit" name="digit" value="9">9</button>
+          <button class="key key--operator" type="submit" name="operation" value="*" aria-label="Multiply">×</button>
+
+          <button class="key" type="submit" name="digit" value="4">4</button>
+          <button class="key" type="submit" name="digit" value="5">5</button>
+          <button class="key" type="submit" name="digit" value="6">6</button>
+          <button class="key key--operator" type="submit" name="operation" value="-" aria-label="Subtract">−</button>
+
+          <button class="key" type="submit" name="digit" value="1">1</button>
+          <button class="key" type="submit" name="digit" value="2">2</button>
+          <button class="key" type="submit" name="digit" value="3">3</button>
+          <button class="key key--operator" type="submit" name="operation" value="+" aria-label="Add">+</button>
+
+          <button class="key key--zero" type="submit" name="digit" value="0">0</button>
+          <button class="key" type="submit" name="action" value="decimal" aria-label="Decimal point">.</button>
+          <button class="key key--equals" type="submit" name="action" value="equals" aria-label="Equals">=</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
